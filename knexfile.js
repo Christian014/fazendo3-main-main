@@ -12,17 +12,19 @@ module.exports = {
     connection: {
       filename: path.resolve(__dirname, "src", "database", "database.db")
     },
+    useNullAsDefault: true,
 
     pool:{
-      afterCreate: (conn, cb) => {
+      // afterCreate: (conn, cb) => {
         
-      }
+      // }
+
+      max: 20
     },
 
   migrations: {
     directory: path.resolve(__dirname, "src", "database", "knex", "migrations")
   },
-    useNullAsdefault: true
-  
+
 
 }};
